@@ -1,0 +1,3 @@
+{
+  "extends": "@wuxh/eslint-config-react"
+}
