@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "eslint": "eslint \"src/**/*.{ts,js,tsx,jsx}\""
+    "eslint": "eslint \"src/**/*.{ts,js,tsx,jsx}\"",
+    "stylelint": "stylelint \"**/*.{css,less}\""
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -17,9 +18,13 @@
     "@vitejs/plugin-react": "^1.0.7",
     "@wuxh/commitlint-config": "0.0.2",
     "@wuxh/eslint-config-react": "*",
+    "@wuxh/stylelint-config-basic": "0.0.3",
     "commitlint": "^15.0.0",
     "eslint": "^8.4.1",
     "husky": "^7.0.4",
+    "less": "^4.1.2",
+    "postcss-less": "^5.0.0",
+    "stylelint": "^14.1.0",
     "typescript": "^4.4.4",
     "vite": "^2.7.1"
   }
