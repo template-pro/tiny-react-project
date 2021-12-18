@@ -6,7 +6,19 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "eslint": "eslint \"src/**/*.{ts,js,tsx,jsx}\"",
-    "stylelint": "stylelint \"**/*.{css,less}\""
+    "eslint:fix": "eslint \"src/**/*.{ts,js,tsx,jsx}\" --fix",
+    "stylelint": "stylelint \"**/*.{css,less}\"",
+    "stylelint:fix": "stylelint \"**/*.{css,less}\" --fix"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "npm run eslint:fix",
+      "git add"
+    ],
+    "src/**/*.{css,less}": [
+      "npm run stylelint:fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -23,6 +35,7 @@
     "eslint": "^8.4.1",
     "husky": "^7.0.4",
     "less": "^4.1.2",
+    "lint-staged": "^12.1.2",
     "postcss-less": "^5.0.0",
     "stylelint": "^14.1.0",
     "typescript": "^4.4.4",
