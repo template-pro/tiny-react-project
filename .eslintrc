@@ -1,3 +1,7 @@
 {
-  "extends": "@wuxh/eslint-config-react"
+  "extends": "@wuxh/eslint-config-react",
+  "ignorePatterns": [
+    "dist",
+    "build"
+  ]
 }
