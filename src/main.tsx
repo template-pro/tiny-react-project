@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import './App.less'
+import { locale } from '@/shared/intl'
+
+locale.initialize()
 
 ReactDOM.render(
   <React.StrictMode>
