@@ -1,5 +1,8 @@
 {
   "extends": "@wuxh/eslint-config-react",
+  "globals": {
+    "__PREFIX_CLS__": true
+  },
   "ignorePatterns": [
     "dist",
     "build"

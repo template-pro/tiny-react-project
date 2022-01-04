@@ -1,5 +1,5 @@
 import path from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import styleImport, { AntdResolve } from 'vite-plugin-style-import'
 import vitePluginIntegrationIntlMessage from './build/vitePluginIntegrationIntlMessage'
@@ -7,7 +7,7 @@ import vitePluginIntegrationIntlMessage from './build/vitePluginIntegrationIntlM
 const resolveCwd = (...arg) => path.resolve(process.cwd(), ...arg)
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       '@': resolveCwd('./src'),
@@ -21,6 +21,10 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
+        modifyVars: {
+          // https://github.com/vitejs/vite/issues/1930
+          '@ant-prefix': loadEnv(mode, process.cwd()).VITE___PREFIX_CLS__,
+        },
       },
     },
   },
@@ -33,4 +37,4 @@ export default defineConfig({
       ],
     }),
   ],
-})
+}))

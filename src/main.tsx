@@ -1,13 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import Root from '@/root/Root'
 import { locale } from '@/shared/intl'
+import RootRouter from '@/root/RootRouter'
 
 locale.initialize()
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Root>
+      <RootRouter />
+    </Root>
   </React.StrictMode>,
   document.getElementById('root'),
 )
