@@ -2,13 +2,15 @@
   "name": "tiny-react-project",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint \"src/**/*.{ts,js,tsx,jsx}\"",
     "eslint:fix": "eslint \"src/**/*.{ts,js,tsx,jsx}\" --fix",
-    "stylelint": "stylelint \"**/*.{css,less}\"",
-    "stylelint:fix": "stylelint \"**/*.{css,less}\" --fix"
+    "stylelint": "stylelint \"src/**/*.{css,less}\"",
+    "stylelint:fix": "stylelint \"src/**/*.{css,less}\" --fix",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [

@@ -12,7 +12,7 @@ COPY . /code
 EXPOSE 3000
 
 # run the app linsting on port 3000
-CMD ["npm", "run","dev" ]
+CMD ["npm", "start" ]
 
 FROM development AS build
 
