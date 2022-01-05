@@ -1,0 +1,25 @@
+version: "3"
+services:
+  webapp_dev:
+    build:
+      context: .
+      target: development
+    container_name: webapp_dev
+    restart: 'on-failure'
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/code/src
+    networks:
+      - react-dev
+  # production
+  webapp_prod:
+    build: .
+    container_name: webapp_prod
+    ports:
+      - 8080:80
+    networks:
+      - react-prod
+networks:
+  react-dev: {}
+  react-prod: {}
