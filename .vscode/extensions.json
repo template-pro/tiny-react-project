@@ -2,6 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
-    "xabikos.reactsnippets"
+    "xabikos.reactsnippets",
+    "voorjaar.windicss-intellisense"
   ]
 }

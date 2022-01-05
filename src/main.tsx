@@ -4,6 +4,8 @@ import Root from '@/root/Root'
 import { locale } from '@/shared/intl'
 import RootRouter from '@/root/RootRouter'
 
+import 'virtual:windi.css'
+
 locale.initialize()
 
 ReactDOM.render(
