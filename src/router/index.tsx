@@ -1,5 +1,6 @@
 import { Navigate, Outlet } from 'react-location'
 import dashboardRoutes, { dashboardPath } from './dashboardRoutes'
+import swiperDemoRoutes from './swiperDemoRoutes'
 import type { RouteConfig } from './type'
 import { BasicLayout } from '@/layout'
 
@@ -19,6 +20,7 @@ const router: RouteConfig[] = [
         element: <Navigate to={dashboardPath} />,
       },
       dashboardRoutes,
+      swiperDemoRoutes,
     ],
   },
 ]
