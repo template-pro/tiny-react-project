@@ -4,8 +4,6 @@ import ErrorBoundary from '@components/ErrorBoundary'
 const BasicLayout: React.FC = ({ children }) => {
   return (
     <>
-      <p>header</p>
-      <hr />
       <ErrorBoundary>
         {children}
       </ErrorBoundary>
