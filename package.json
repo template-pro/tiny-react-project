@@ -25,6 +25,8 @@
   "dependencies": {
     "@wuxh/utils": "0.0.2-beta.1",
     "antd": "^4.17.3",
+    "mobx": "^6.5.0",
+    "mobx-react-lite": "^3.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intl": "^5.24.0",
