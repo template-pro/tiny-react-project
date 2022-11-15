@@ -34,7 +34,12 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     vitePluginIntegrationIntlMessage(),
-    react(),
+    react({
+      jsxImportSource: '@emotion/react',
+      babel: {
+        plugins: ['@emotion/babel-plugin'],
+      },
+    }),
     styleImport({
       resolves: [
         AntdResolve(),
