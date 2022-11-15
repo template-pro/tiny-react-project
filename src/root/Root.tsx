@@ -5,6 +5,7 @@ import { CN } from '@const/languages'
 import { antdLocaleMap } from '@const/languages/localeTypes'
 import { locale } from '@/shared/intl'
 import { envConfig } from '@/shared/config'
+import { store, StoreContext } from '@/models/Store'
 
 const { prefixCls } = envConfig
 
@@ -20,11 +21,13 @@ const Root: React.FC = ({ children }) => (
     locale={locale.currentLocale || DEFAULT_LOCALE}
     messages={locale.getMessages()}
   >
-    <ConfigProvider
-      prefixCls={prefixCls}
-      locale={antdLocaleMap[locale.currentLocale || DEFAULT_LOCALE]}>
-      {children}
-    </ConfigProvider>
+    <StoreContext.Provider value={store}>
+      <ConfigProvider
+        prefixCls={prefixCls}
+        locale={antdLocaleMap[locale.currentLocale || DEFAULT_LOCALE]}>
+        {children}
+      </ConfigProvider>
+    </StoreContext.Provider>
   </IntlProvider>
 )
 
