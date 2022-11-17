@@ -20,5 +20,5 @@
 ### 使用 [degit](https://github.com/Rich-Harris/degit) 下载
 
 ```bash
-npx tiged https://github.com/template-pro/tiny-react-project#master -m=git my-project
+npx tiged template-pro/tiny-react-project#master -m=git my-project
 ```
