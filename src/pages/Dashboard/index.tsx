@@ -1,38 +1,32 @@
-import { Button, Space } from 'antd'
 import React from 'react'
-import { useStore } from '@/models/Store'
+import { useUpdateEffect } from 'ahooks'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { usePreviousRef, usePreviousState, useRefState } from '@/shared/hooks'
 
 const Dashboard: React.FC = () => {
-  const [count, setCount] = React.useState(0)
-  const {
-    modalStore: { openModal, closeModal },
-  } = useStore()
+  // const [value, update] = useRefState(0)
+  const [value, update] = usePreviousState(0)
+  // const [value, update] = usePreviousRef(0)
 
-  // TODO: 故意为之
   React.useEffect(() => {
-    if (count > 5)
-      throw new Error('count error')
-  }, [count])
+    window.console.log('mount')
+  }, [])
 
-  const handlerOpenModal = () => {
-    openModal({
-      title: 'modal title',
-      content: <p>modal body</p>,
-      footer: <Button onClick={closeModal}>close modal</Button>,
-    })
-  }
+  useUpdateEffect(() => {
+    window.console.log('re-render')
+  })
 
   return (
-    <>
-      <p>{count}</p>
-      <Space>
-        <Button onClick={() => setCount(count + 1)}>add</Button>
-        <Button onClick={handlerOpenModal}>Open Modal</Button>
-      </Space>
-    </>
+    <div>
+      <p>value: {value}</p>
+      <button
+        type="button"
+        onClick={() => update(v => v + 1)}
+      >
+        click
+      </button>
+    </div>
   )
 }
-
-Dashboard.displayName = 'Dashboard'
 
 export default Dashboard
