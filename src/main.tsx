@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import ConsoleInfo from '@components/ConsoleInfo'
 import Root from '@/root/Root'
 import { locale } from '@/shared/intl'
@@ -9,12 +9,11 @@ import 'virtual:windi.css'
 
 locale.initialize()
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Root>
-      <ConsoleInfo/>
+      <ConsoleInfo />
       <RootRouter />
     </Root>
   </React.StrictMode>,
-  document.getElementById('root'),
 )
