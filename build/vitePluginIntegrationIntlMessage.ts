@@ -77,7 +77,8 @@ function vitePluginIntegrationIntlMessage (): Plugin {
       }
     },
     configResolved () {
-      integrationServer()
+      // FIXME: https://github.com/vitejs/vite/issues/11044
+      // integrationServer()
     }
   }
 }
