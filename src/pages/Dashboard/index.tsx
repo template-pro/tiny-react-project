@@ -1,6 +1,8 @@
 import { Button, Space } from 'antd'
 import React from 'react'
+import { useThrottleFn } from 'ahooks'
 import { useStore } from '@/models/Store'
+import { DEBOUNCE_WAIT_TIME } from '@/shared/const/common'
 
 const Dashboard: React.FC = () => {
   const [count, setCount] = React.useState(0)
@@ -8,7 +10,7 @@ const Dashboard: React.FC = () => {
     modalStore: { openModal, closeModal },
   } = useStore()
 
-  // TODO: 故意为之
+  // NOTE: Intentionally
   React.useEffect(() => {
     if (count > 5)
       throw new Error('count error')
@@ -22,11 +24,16 @@ const Dashboard: React.FC = () => {
     })
   }
 
+  const { run: handlerClick } = useThrottleFn(
+    () => setCount(prev => prev + 1),
+    { wait: DEBOUNCE_WAIT_TIME },
+  )
+
   return (
     <>
       <p>{count}</p>
       <Space>
-        <Button onClick={() => setCount(count + 1)}>add</Button>
+        <Button onClick={handlerClick}>add</Button>
         <Button onClick={handlerOpenModal}>Open Modal</Button>
       </Space>
     </>
