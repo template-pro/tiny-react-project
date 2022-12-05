@@ -3,16 +3,18 @@ FROM node:14.17.0-alpine AS development
 WORKDIR /code
 
 COPY package.json /code/package.json
-COPY package-lock.json /code/package-lock.json
+COPY pnpm-lock.yaml /code/pnpm-lock.yaml
 
 RUN npm config set registry https://registry.npm.taobao.org \
-    && npm ci
+    && npm install -g pnpm \
+    && pnpm install
+
 COPY . /code
 
-EXPOSE 3000
+EXPOSE 5173
 
-# run the app linsting on port 3000
-CMD ["npm", "start" ]
+# run the app linsting on port 5173
+CMD ["pnpm", "start" ]
 
 FROM development AS build
 
