@@ -21,7 +21,7 @@ const ModalContainer = observer(() => {
 
   return (
     <Modal
-      visible={visible}
+      open={visible}
       onCancel={onCancel}
       footer={footer}
       {...restModalProps}
