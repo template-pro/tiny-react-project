@@ -19,6 +19,7 @@ const build = async () => {
   const res = await vite({
     configFile: false,
     logLevel: 'silent',
+    mode: 'custom',
     build: {
       write: false,
       lib: {

@@ -15,7 +15,11 @@ ConfigProvider.config({
 
 const DEFAULT_LOCALE = CN
 
-const Root: React.FC = ({ children }) => (
+interface RootProps {
+  children: React.ReactNode
+}
+
+const Root = ({ children }: RootProps) => (
   <IntlProvider
     defaultLocale={locale.currentLocale}
     locale={locale.currentLocale || DEFAULT_LOCALE}
