@@ -4,7 +4,7 @@ import { useThrottleFn } from 'ahooks'
 import { useStore } from '@/models/Store'
 import { DEBOUNCE_WAIT_TIME } from '@/shared/const/common'
 
-const Dashboard: React.FC = () => {
+const Dashboard = () => {
   const [count, setCount] = React.useState(0)
   const {
     modalStore: { openModal, closeModal },

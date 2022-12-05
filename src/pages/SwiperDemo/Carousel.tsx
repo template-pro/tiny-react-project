@@ -16,7 +16,7 @@ function contentStyle(): React.CSSProperties {
 
 const MyCarousel = React.createContext<CarouselRef | null>(null)
 
-const CarouselButton: React.FC = () => {
+const CarouselButton = () => {
   const carousel = React.useContext(MyCarousel)
   return (
     <Row justify="space-between">
@@ -26,7 +26,7 @@ const CarouselButton: React.FC = () => {
   )
 }
 
-const CarouselDemo: React.FC = () => {
+const CarouselDemo = () => {
   const [carousel, setCarousel] = React.useState<CarouselRef | null>(null)
   const ref = React.useCallback(el => setCarousel(el), [])
 

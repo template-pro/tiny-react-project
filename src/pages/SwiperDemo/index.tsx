@@ -3,7 +3,7 @@ import { Divider } from 'antd'
 import Swiper from './Swiper'
 import Carousel from './Carousel'
 
-const SwiperDemo: React.FC = () => {
+const SwiperDemo = () => {
   return (
     <>
       <Swiper />

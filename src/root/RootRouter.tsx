@@ -7,7 +7,7 @@ import { locale } from '@/shared/intl'
 
 export const history = createBrowserHistory()
 
-const RootRouter: React.FC = () => {
+const RootRouter = () => {
   const reactLocation = new ReactLocation({ history })
   const intl = useIntl()
   locale.setIntlObject(intl)

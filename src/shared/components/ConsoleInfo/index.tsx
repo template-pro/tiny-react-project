@@ -2,7 +2,11 @@ import React from 'react'
 import { useIntl } from 'react-intl'
 import { locale, messages } from '@/shared/intl'
 
-const ConsoleInfo: React.FC = ({ children }) => {
+interface ConsoleInfoProps {
+  children?: React.ReactNode
+}
+
+const ConsoleInfo = ({ children }: ConsoleInfoProps) => {
   const intl = useIntl()
   locale.setIntlObject(intl)
 
