@@ -1,4 +1,4 @@
-import type { DefaultGenerics, Route } from 'react-location'
+import type { DefaultGenerics, Route } from '@tanstack/react-location'
 
 export type RouteMeta={
   readonly root?: boolean

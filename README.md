@@ -7,7 +7,7 @@
 - 比 Webpack 构建更快的 [Vite](https://cn.vitejs.dev/) 工具。
 - 比 TailWind CSS 更灵活的 [WindiCSS](https://windicss.org/)。
 - 强大的 [TypesSript](https://www.typescriptlang.org/) 类型推导。
-- React 热门框架 [Ant-Desgin](https://ant.design/index-cn)、[React-Intl](https://formatjs.io/docs/react-intl/)、[React-Location](https://react-location.tanstack.com/)。
+- React 热门框架 [Ant-Desgin](https://ant.design/index-cn)、[React-Intl](https://formatjs.io/docs/react-intl/)、[@tanstack/react-location](https://react-location.tanstack.com/)。
 - 提供 [Docker Compose](https://docs.docker.com/compose/) 一键部署功能。
 - 常见的代码规范方案 [ESLint](https://eslint.org/)、[Stylelint](https://stylelint.io/)、[commitlint](https://commitlint.js.org/)。
 

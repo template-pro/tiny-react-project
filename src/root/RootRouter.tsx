@@ -1,7 +1,7 @@
-import React from 'react'
-import { createBrowserHistory, ReactLocation, Router } from 'react-location'
+import { createBrowserHistory, ReactLocation, Router } from '@tanstack/react-location'
 import { Spin } from 'antd'
 import { useIntl } from 'react-intl'
+import { DEBOUNCE_WAIT_TIME } from '@const/common'
 import routes from '@/router'
 import { locale } from '@/shared/intl'
 
@@ -16,7 +16,9 @@ const RootRouter = () => {
     <Router
       location={reactLocation}
       routes={routes}
-      defaultPendingElement={Spin}
+      defaultPendingMs={0}
+      defaultPendingMinMs={DEBOUNCE_WAIT_TIME}
+      defaultPendingElement={<Spin />}
     />
   )
 }

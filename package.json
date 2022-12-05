@@ -27,6 +27,7 @@
     "@ant-design/icons": "^4.8.0",
     "@emotion/babel-plugin": "^11.10.5",
     "@emotion/react": "^11.10.5",
+    "@tanstack/react-location": "^3.7.4",
     "@wuxh/utils": "^0.0.3",
     "ahooks": "^3.7.0",
     "antd": "^5.0.1",
@@ -35,7 +36,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.2.1",
-    "react-location": "^3.3.4",
     "swiper": "^8.4.5"
   },
   "devDependencies": {
