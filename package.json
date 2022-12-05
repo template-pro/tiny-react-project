@@ -28,6 +28,7 @@
     "@emotion/babel-plugin": "^11.10.5",
     "@emotion/react": "^11.10.5",
     "@wuxh/utils": "^0.0.3",
+    "ahooks": "^3.7.0",
     "antd": "^5.0.1",
     "mobx": "^6.7.0",
     "mobx-react-lite": "^3.4.0",
