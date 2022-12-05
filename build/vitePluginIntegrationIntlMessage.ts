@@ -19,6 +19,7 @@ const build = async () => {
   const res = await vite({
     configFile: false,
     logLevel: 'silent',
+    mode: 'custom',
     build: {
       write: false,
       lib: {
@@ -77,8 +78,7 @@ function vitePluginIntegrationIntlMessage (): Plugin {
       }
     },
     configResolved () {
-      // FIXME: https://github.com/vitejs/vite/issues/11044
-      // integrationServer()
+      integrationServer()
     }
   }
 }
