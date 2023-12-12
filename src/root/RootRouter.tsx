@@ -1,23 +1,38 @@
-import { createBrowserHistory, ReactLocation, Router } from '@tanstack/react-location'
-import { Spin } from 'antd'
-import { DEBOUNCE_WAIT_TIME } from '@const/common'
-import routes from '@/router'
+import { Skeleton } from 'antd'
+import React, { Suspense } from 'react'
+import {
+  BrowserRouter,
+  useLocation,
+  useRoutes,
+} from 'react-router-dom'
+import { BasicLayout } from '@/layout'
 
-export const history = createBrowserHistory()
+import routes from '~react-pages'
 
-const RootRouter = () => {
-  const reactLocation = new ReactLocation({ history })
+const Outlet = () => {
+  const { pathname } = useLocation()
+
+  const Layout = React.useMemo(() => {
+    if (pathname.toLowerCase().startsWith('/demos'))
+      return React.Fragment
+
+    return BasicLayout
+  }, [pathname])
 
   return (
-    <Router
-      location={reactLocation}
-      routes={routes}
-      defaultPendingMs={0}
-      defaultPendingMinMs={DEBOUNCE_WAIT_TIME}
-      defaultPendingElement={<Spin />}
-    />
+    <Layout>
+      <Suspense fallback={<Skeleton active />}>
+        {useRoutes(routes)}
+      </Suspense>
+    </Layout>
   )
 }
+
+const RootRouter = () => (
+  <BrowserRouter>
+    <Outlet />
+  </BrowserRouter>
+)
 
 RootRouter.displayName = 'RootRouter'
 

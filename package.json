@@ -22,12 +22,11 @@
       "git add"
     ]
   },
-  "packageManager": "pnpm@7.3.0",
+  "packageManager": "pnpm@8.6.2",
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
     "@emotion/babel-plugin": "^11.10.5",
     "@emotion/react": "^11.10.5",
-    "@tanstack/react-location": "^3.7.4",
     "@wuxh/utils": "^0.0.3",
     "ahooks": "^3.7.0",
     "antd": "^5.0.1",
@@ -36,7 +35,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.2.1",
-    "swiper": "^8.4.5"
+    "react-router-dom": "^6.20.1",
+    "swiper": "^8.4.5",
+    "vite-plugin-pages": "^0.31.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",

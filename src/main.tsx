@@ -7,8 +7,9 @@ import 'virtual:windi.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Root>
-      <RootRouter />
-    </Root>
+    <RootRouter >
+    </RootRouter>
+    <Root />
+
   </React.StrictMode>,
 )
