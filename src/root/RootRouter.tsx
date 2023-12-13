@@ -1,25 +1,38 @@
-import React from 'react'
-import { createBrowserHistory, ReactLocation, Router } from 'react-location'
-import { Spin } from 'antd'
-import { useIntl } from 'react-intl'
-import routes from '@/router'
-import { locale } from '@/shared/intl'
+import { Skeleton } from 'antd'
+import React, { Suspense } from 'react'
+import {
+  BrowserRouter,
+  useLocation,
+  useRoutes,
+} from 'react-router-dom'
+import { BasicLayout } from '@/layout'
 
-export const history = createBrowserHistory()
+import routes from '~react-pages'
 
-const RootRouter: React.FC = () => {
-  const reactLocation = new ReactLocation({ history })
-  const intl = useIntl()
-  locale.setIntlObject(intl)
+const Outlet = () => {
+  const { pathname } = useLocation()
+
+  const Layout = React.useMemo(() => {
+    if (pathname.toLowerCase().startsWith('/demos'))
+      return React.Fragment
+
+    return BasicLayout
+  }, [pathname])
 
   return (
-    <Router
-      location={reactLocation}
-      routes={routes}
-      defaultPendingElement={Spin}
-    />
+    <Layout>
+      <Suspense fallback={<Skeleton active />}>
+        {useRoutes(routes)}
+      </Suspense>
+    </Layout>
   )
 }
+
+const RootRouter = () => (
+  <BrowserRouter>
+    <Outlet />
+  </BrowserRouter>
+)
 
 RootRouter.displayName = 'RootRouter'
 

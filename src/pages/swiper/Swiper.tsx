@@ -6,7 +6,7 @@ import { randomHexColorCode } from '@wuxh/utils'
 
 import 'swiper/css'
 
-const SwiperButton: React.FC = () => {
+const SwiperButton = () => {
   const swiper = useSwiper()
 
   return (
@@ -17,7 +17,7 @@ const SwiperButton: React.FC = () => {
   )
 }
 
-const SwiperDemo: React.FC = () => {
+const SwiperDemo = () => {
   return (
     <>
       <Swiper
