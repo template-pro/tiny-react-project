@@ -1,12 +1,12 @@
 import React from 'react'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
-import { Row, Button } from 'antd'
+import { Button, Row } from 'antd'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { randomHexColorCode } from '@wuxh/utils'
 
 import 'swiper/css'
 
-const SwiperButton = () => {
+function SwiperButton() {
   const swiper = useSwiper()
 
   return (
@@ -17,7 +17,7 @@ const SwiperButton = () => {
   )
 }
 
-const SwiperDemo = () => {
+function SwiperDemo() {
   return (
     <>
       <Swiper
@@ -33,7 +33,9 @@ const SwiperDemo = () => {
               key={index}
               style={{ backgroundColor: randomHexColorCode(), height: '300px' }}
             >
-              Slide {index + 1}
+              Slide
+              {' '}
+              {index + 1}
             </SwiperSlide>
           ))
         }

@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx'
 import type { ModalProps as AntdModalProps } from 'antd'
 
-type ModalProps =Omit<AntdModalProps, 'visible'> & {
+type ModalProps = Omit<AntdModalProps, 'visible'> & {
   content?: React.ReactNode
 }
 

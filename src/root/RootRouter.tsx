@@ -9,7 +9,7 @@ import { BasicLayout } from '@/layout'
 
 import routes from '~react-pages'
 
-const Outlet = () => {
+function Outlet() {
   const { pathname } = useLocation()
 
   const Layout = React.useMemo(() => {
@@ -28,11 +28,13 @@ const Outlet = () => {
   )
 }
 
-const RootRouter = () => (
-  <BrowserRouter>
-    <Outlet />
-  </BrowserRouter>
-)
+function RootRouter() {
+  return (
+    <BrowserRouter>
+      <Outlet />
+    </BrowserRouter>
+  )
+}
 
 RootRouter.displayName = 'RootRouter'
 

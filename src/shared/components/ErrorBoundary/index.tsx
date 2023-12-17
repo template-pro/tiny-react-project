@@ -27,7 +27,8 @@ class ErrorBoundary extends React.Component<any, State> {
             type="button"
             onClick={
               () => window.location.reload()
-            }>
+            }
+          >
             reload
           </button>
         </>

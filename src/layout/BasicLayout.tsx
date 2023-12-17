@@ -1,17 +1,17 @@
 import React from 'react'
 import ErrorBoundary from '@components/ErrorBoundary'
 import ModalContainer from '@/shared/components/ModalContainer'
-import Emotion from '@/shared/components/Emotion'
+import AllStyles from '@/shared/components/AllStyles'
 
 interface BasicLayoutProps {
   children?: React.ReactNode
 }
 
-const BasicLayout = ({ children }: BasicLayoutProps) => {
+function BasicLayout({ children }: BasicLayoutProps) {
   return (
     <>
       <header>
-        <Emotion />
+        <AllStyles />
       </header>
       <hr />
       <ErrorBoundary>

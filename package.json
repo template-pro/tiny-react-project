@@ -1,29 +1,19 @@
 {
   "name": "tiny-react-project",
-  "private": true,
   "type": "module",
+  "private": true,
+  "packageManager": "pnpm@8.6.2",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "npm run eslint && npm run stylelint",
-    "eslint": "eslint \"src/**/*.{ts,js,tsx,jsx}\"",
-    "eslint:fix": "eslint \"src/**/*.{ts,js,tsx,jsx}\" --fix",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
     "stylelint": "stylelint \"src/**/*.{css,less}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,less}\" --fix",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json}": [
-      "npm run eslint:fix",
-      "git add"
-    ],
-    "src/**/*.{css,less}": [
-      "npm run stylelint:fix",
-      "git add"
-    ]
-  },
-  "packageManager": "pnpm@8.6.2",
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@emotion/babel-plugin": "^11.11.0",
@@ -31,6 +21,7 @@
     "@wuxh/utils": "^1.1.0",
     "ahooks": "^3.7.8",
     "antd": "^5.12.2",
+    "clsx": "^2.0.0",
     "mobx": "^6.12.0",
     "mobx-react-lite": "^4.0.5",
     "react": "^18.2.0",
@@ -57,10 +48,18 @@
     "less": "^4.2.0",
     "lint-staged": "^15.2.0",
     "postcss-less": "^6.0.0",
+    "simple-git-hooks": "^2.9.0",
     "stylelint": "^16.0.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.8",
     "vite-plugin-windicss": "^1.9.2",
+    "vite-tsconfig-paths": "^4.2.2",
     "windicss": "^3.5.6"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
