@@ -1,5 +1,5 @@
 import React from 'react'
-import { Carousel, Row, Button } from 'antd'
+import { Button, Carousel, Row } from 'antd'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import type { CarouselRef } from 'antd/lib/carousel'
 import { randomHexColorCode } from '@wuxh/utils'
@@ -16,7 +16,7 @@ function contentStyle(): React.CSSProperties {
 
 const MyCarousel = React.createContext<CarouselRef | null>(null)
 
-const CarouselButton = () => {
+function CarouselButton() {
   const carousel = React.useContext(MyCarousel)
   return (
     <Row justify="space-between">
@@ -26,7 +26,7 @@ const CarouselButton = () => {
   )
 }
 
-const CarouselDemo = () => {
+function CarouselDemo() {
   const [carousel, setCarousel] = React.useState<CarouselRef | null>(null)
   const ref = React.useCallback(el => setCarousel(el), [])
 

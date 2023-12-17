@@ -1,11 +1,11 @@
-version: "3"
+version: '3'
 services:
   webapp_dev:
     build:
       context: .
       target: development
     container_name: webapp_dev
-    restart: 'on-failure'
+    restart: on-failure
     ports:
       - 5173:5173
     volumes:
