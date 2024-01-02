@@ -27,8 +27,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
-    "swiper": "^11.0.5",
-    "vite-plugin-pages": "^0.32.0"
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.4.6",
@@ -52,6 +51,7 @@
     "stylelint": "^16.0.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.8",
+    "vite-plugin-pages": "^0.32.0",
     "vite-plugin-windicss": "^1.9.2",
     "vite-tsconfig-paths": "^4.2.2",
     "windicss": "^3.5.6"
